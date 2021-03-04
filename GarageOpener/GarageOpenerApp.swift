@@ -7,7 +7,7 @@ import SwiftUI
 struct GarageOpenerApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView(model: GarageModel(api: MockAPI()))
+      ContentView(model: GarageModel(api: GarageAPI()))
     }
   }
 }

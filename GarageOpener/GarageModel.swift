@@ -14,7 +14,7 @@ class GarageModel : ObservableObject {
   @Published private(set) var loading = false
   
   private let api: RequestProtocol
-  private let updateInterval = TimeInterval(1)
+  private let updateInterval = TimeInterval(2)
   
   private lazy var timer: DispatchSourceTimer = {
     let t = DispatchSource.makeTimerSource()
@@ -42,9 +42,11 @@ class GarageModel : ObservableObject {
     print("[model] loading door state")
     api.isOpen() { [weak self] isOpen in
       if let model = self {
-        model.state = isOpen ? .open : .closed
-        model.lastUpdate = self?.dateFormatter.string(from: Date())
-        model.loading = false
+        DispatchQueue.main.async {
+          model.state = isOpen ? .open : .closed
+          model.lastUpdate = self?.dateFormatter.string(from: Date())
+          model.loading = false
+        }
         print("[model] door state = \(model.state)")
       }
     }
@@ -54,7 +56,9 @@ class GarageModel : ObservableObject {
     print("[model] toggling door")
     api.toggleDoor() { [weak self] () in
       if let model = self {
-        model.lastToggle = self?.dateFormatter.string(from: Date())
+        DispatchQueue.main.async {
+          model.lastToggle = self?.dateFormatter.string(from: Date())
+        }
         print("[model] toggled door")
       }
     }
