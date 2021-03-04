@@ -5,10 +5,10 @@ import Foundation
 
 class GarageAPI : RequestProtocol {
   func isOpen(result: @escaping (Bool) -> ()) {
-
+    
   }
-
-  func toggleDoor(result: @escaping (Bool) -> ()) {
+  
+  func toggleDoor(result: @escaping () -> ()) {
     
   }
 }

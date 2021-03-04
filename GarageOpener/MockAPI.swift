@@ -5,17 +5,17 @@ import Foundation
 
 class MockAPI: RequestProtocol {
   var isOpen = false
-
+  
   func isOpen(result: @escaping (Bool) -> ()) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500), execute: {
       result(self.isOpen)
     })
   }
-
-  func toggleDoor(result: @escaping (Bool) -> ()) {
-    isOpen = !isOpen
-    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-      result(self.isOpen)
+  
+  func toggleDoor(result: @escaping () -> ()) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+      self.isOpen = !self.isOpen
+      result()
     })
   }
 }

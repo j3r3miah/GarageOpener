@@ -5,5 +5,5 @@ import Foundation
 
 protocol RequestProtocol {
   func isOpen(result: @escaping (Bool) -> ())
-  func toggleDoor(result: @escaping (Bool) -> ())
+  func toggleDoor(result: @escaping () -> ())
 }

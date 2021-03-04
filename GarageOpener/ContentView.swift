@@ -5,59 +5,51 @@ import SwiftUI
 
 struct ContentView: View {
   @ObservedObject var model: GarageModel
-
+  
   var body: some View {
     VStack() {
       MapView()
         .ignoresSafeArea(edges: .top)
         .frame(height: 300)
-
+      
       CircleImage()
         .offset(x: 95, y:-110)
         .padding(.bottom, -200)
-
+      
       VStack(alignment: .leading) {
         Text("Garage Door")
           .font(.largeTitle)
-
+        
         Text("Lake St - San Francisco, CA")
           .font(.subheadline)
-
+        
         Divider()
-
+        
         Spacer()
-
+        
         HStack() {
           Spacer()
-
+          
           Button(action: {
             model.toggleDoor()
           }) {
             VStack() {
-              switch model.state {
-              case .loading:
-                ProgressView()
-                  .progressViewStyle(CircularProgressViewStyle())
-                  .scaleEffect(2.5, anchor: .center)
-              case .closed, .idle:
-                Image("closed").resizable()
-              case .open:
-                Image("open").resizable()
-              }
+              Image(model.state == .open ? "open" : "closed")
+                .resizable()
             }
             .frame(width: 250, height:250)
           }
           .buttonStyle(CustomButtonStyle())
-          .disabled(model.state == .loading)
-
+          .offset(y: 20)
+          
           Spacer()
         }
         Spacer()
+        
       }.padding()
-      Spacer()
-    }
-    .onAppear() {
-      model.load()
+      
+      //Spacer()
+      Text(model.lastUpdate ?? "")
     }
   }
 }
