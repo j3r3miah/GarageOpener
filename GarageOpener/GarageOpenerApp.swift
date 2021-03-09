@@ -7,7 +7,8 @@ import SwiftUI
 struct GarageOpenerApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView(model: GarageModel(api: GarageAPI()))
+      let finder = ServiceFinder(serviceName: "garage")
+      ContentView(model: GarageModel(api: GarageAPI(serviceFinder: finder)))
     }
   }
 }

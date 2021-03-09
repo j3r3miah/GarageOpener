@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9446016525F75A5700488538 /* ServiceFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446016425F75A5700488538 /* ServiceFinder.swift */; };
 		947FC76525F13172003480D0 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947FC75E25F13172003480D0 /* RequestProtocol.swift */; };
 		947FC76625F13172003480D0 /* GarageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947FC75F25F13172003480D0 /* GarageModel.swift */; };
 		947FC76725F13172003480D0 /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947FC76025F13172003480D0 /* MockAPI.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9446016425F75A5700488538 /* ServiceFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFinder.swift; sourceTree = "<group>"; };
 		947FC75E25F13172003480D0 /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		947FC75F25F13172003480D0 /* GarageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageModel.swift; sourceTree = "<group>"; };
 		947FC76025F13172003480D0 /* MockAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				947FC76125F13172003480D0 /* CircleImage.swift */,
 				947FC76425F13172003480D0 /* GarageAPI.swift */,
+				9446016425F75A5700488538 /* ServiceFinder.swift */,
 				947FC75F25F13172003480D0 /* GarageModel.swift */,
 				947FC76325F13172003480D0 /* MapView.swift */,
 				947FC76025F13172003480D0 /* MockAPI.swift */,
@@ -160,6 +163,7 @@
 				947FC76A25F13172003480D0 /* MapView.swift in Sources */,
 				947FC76525F13172003480D0 /* RequestProtocol.swift in Sources */,
 				94C1A2ED25F1313A00C6D12A /* ContentView.swift in Sources */,
+				9446016525F75A5700488538 /* ServiceFinder.swift in Sources */,
 				947FC76725F13172003480D0 /* MockAPI.swift in Sources */,
 				94C1A2EB25F1313A00C6D12A /* GarageOpenerApp.swift in Sources */,
 				947FC76825F13172003480D0 /* CircleImage.swift in Sources */,
