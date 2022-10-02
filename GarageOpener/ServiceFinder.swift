@@ -8,6 +8,7 @@ class ServiceFinder : NSObject, NetServiceDelegate {
   var ipAddress: String?
   
   init(serviceName: String) {
+    print("Searching for service:", serviceName)
     service = NetService(domain: "local.", type: "_http._tcp.", name: serviceName)
     super.init()
     service.delegate = self
